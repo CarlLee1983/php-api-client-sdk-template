@@ -1,5 +1,21 @@
 # Writing Tests
 
+> **📖 使用方式**
+>
+> 將以下指令複製給 AI 助手：
+>
+> ```
+> 請參考 .ai/prompts/writing-tests.md，幫我撰寫測試：
+>
+> 要測試的方法：[Client::methodName]
+> 測試情境：
+> - 成功情境
+> - 驗證失敗（參數為空）
+> - API 錯誤回應（4xx/5xx）
+> ```
+
+---
+
 ## Context
 
 This guide covers testing patterns for SDKs built with `php-api-client-sdk-template`.

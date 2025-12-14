@@ -1,5 +1,19 @@
 # Laravel Integration
 
+> **📖 使用方式**
+>
+> 將以下指令複製給 AI 助手：
+>
+> ```
+> 請參考 .ai/prompts/laravel-integration.md，幫我設定 Laravel 整合：
+>
+> SDK 類別名稱：[例如：PaymentClient]
+> Facade 名稱：[例如：Payment]
+> 配置項目：[例如：api_key, merchant_id, sandbox]
+> ```
+
+---
+
 ## Context
 
 This guide covers Laravel integration patterns for SDKs built with `php-api-client-sdk-template`.

@@ -1,5 +1,20 @@
 # Implement a New SDK
 
+> **📖 使用方式**
+>
+> 將以下指令複製給 AI 助手：
+>
+> ```
+> 請參考 .ai/prompts/implement-sdk.md，幫我建立 SDK 的基本架構。
+>
+> API 規格：
+> - Base URL: [YOUR_API_URL]
+> - Authentication: [Bearer Token / API Key / HMAC]
+> - 需要的方法：[列出 API 端點]
+> ```
+
+---
+
 ## Context
 
 You are helping to implement a new PHP SDK using the `php-api-client-sdk-template`. The template provides base classes for HTTP communication, configuration, and error handling.

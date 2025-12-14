@@ -1,5 +1,20 @@
 # Error Handling Patterns
 
+> **📖 使用方式**
+>
+> 將以下指令複製給 AI 助手：
+>
+> ```
+> 請參考 .ai/prompts/error-handling.md，幫我設計錯誤處理：
+>
+> 需要處理的錯誤類型：
+> - [例如：付款被拒絕、餘額不足]
+> - [例如：API 回傳錯誤碼]
+> - [例如：網路連線失敗]
+> ```
+
+---
+
 ## Context
 
 This guide covers error handling patterns for SDKs built with `php-api-client-sdk-template`.

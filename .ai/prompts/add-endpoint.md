@@ -1,5 +1,20 @@
 # Add New API Endpoint
 
+> **📖 使用方式**
+>
+> 將以下指令複製給 AI 助手：
+>
+> ```
+> 請參考 .ai/prompts/add-endpoint.md，在 Client 類別中新增 API 方法：
+>
+> 方法名稱：[METHOD_NAME]
+> HTTP Method：[GET/POST/PUT/DELETE]
+> 路徑：[/api/path/{id}]
+> 參數：[列出參數和類型]
+> ```
+
+---
+
 ## Context
 
 You are adding a new API endpoint to an existing SDK that was created from `php-api-client-sdk-template`.
