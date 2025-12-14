@@ -37,7 +37,7 @@
 
 ```bash
 # 複製模板
-git clone https://github.com/CarlLee1983/php-sdk-template.git my-new-sdk
+git clone https://github.com/CarlLee1983/php-api-client-sdk-template.git my-new-sdk
 cd my-new-sdk
 ```
 
@@ -48,10 +48,12 @@ cd my-new-sdk
 ```
 
 腳本會引導您完成：
-- 套件名稱 (例如 `vendor/my-sdk`)
+- Composer vendor 名稱（例如 `carllee1983`）
+- 套件名稱（例如 `my-sdk`）
 - 套件描述
-- PHP 命名空間 (例如 `Vendor\MySdk`)
-- GitHub 用戶名稱和儲存庫名稱
+- PHP 命名空間（例如 `Vendor\MySdk`）
+- GitHub 用戶名稱（預設為 vendor 名稱）
+- 儲存庫名稱（預設為套件名稱）
 - 作者資訊
 - 是否包含 Laravel 支援
 
@@ -121,7 +123,7 @@ composer test
 ## 專案結構
 
 ```
-php-sdk-template/
+php-api-client-sdk-template/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── bug_report.yml

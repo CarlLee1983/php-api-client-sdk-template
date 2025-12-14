@@ -37,7 +37,7 @@ This template is designed for building SDKs that:
 
 ```bash
 # Clone the template
-git clone https://github.com/CarlLee1983/php-sdk-template.git my-new-sdk
+git clone https://github.com/CarlLee1983/php-api-client-sdk-template.git my-new-sdk
 cd my-new-sdk
 ```
 
@@ -48,10 +48,12 @@ cd my-new-sdk
 ```
 
 The script will guide you through:
-- Package name (e.g., `vendor/my-sdk`)
+- Composer vendor name (e.g., `carllee1983`)
+- Package name (e.g., `my-sdk`)
 - Package description
 - PHP namespace (e.g., `Vendor\MySdk`)
-- GitHub username and repository name
+- GitHub username (defaults to vendor name)
+- Repository name (defaults to package name)
 - Author information
 - Whether to include Laravel support
 
@@ -121,7 +123,7 @@ The following placeholders are replaced during initialization:
 ## Project Structure
 
 ```
-php-sdk-template/
+php-api-client-sdk-template/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── bug_report.yml

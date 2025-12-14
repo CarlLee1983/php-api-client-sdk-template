@@ -40,11 +40,30 @@ fi
 echo -e "${CYAN}Please provide the following information:${NC}"
 echo ""
 
-read -p "📦 Package name (e.g., carllee1983/my-sdk): " PACKAGE_NAME
-if [ -z "$PACKAGE_NAME" ]; then
+read -p "🏢 Composer vendor name (e.g., carllee1983): " VENDOR_NAME
+if [ -z "$VENDOR_NAME" ]; then
+    echo -e "${RED}Error: Vendor name is required.${NC}"
+    exit 1
+fi
+# Validate vendor name (lowercase alphanumeric with hyphens/underscores)
+if ! echo "$VENDOR_NAME" | grep -qE '^[a-z0-9]([_.-]?[a-z0-9]+)*$'; then
+    echo -e "${RED}Error: Vendor name must be lowercase alphanumeric (hyphens/underscores allowed).${NC}"
+    exit 1
+fi
+
+read -p "📦 Package name (e.g., my-sdk): " PACKAGE_SLUG
+if [ -z "$PACKAGE_SLUG" ]; then
     echo -e "${RED}Error: Package name is required.${NC}"
     exit 1
 fi
+# Validate package name (lowercase alphanumeric with hyphens/underscores/dots)
+if ! echo "$PACKAGE_SLUG" | grep -qE '^[a-z0-9](([_.]|-{1,2})?[a-z0-9]+)*$'; then
+    echo -e "${RED}Error: Package name must be lowercase alphanumeric (hyphens/underscores/dots allowed).${NC}"
+    exit 1
+fi
+
+# Combine to create full package name
+PACKAGE_NAME="${VENDOR_NAME}/${PACKAGE_SLUG}"
 
 read -p "📝 Package description: " PACKAGE_DESC
 if [ -z "$PACKAGE_DESC" ]; then
@@ -58,14 +77,13 @@ if [ -z "$NAMESPACE" ]; then
     exit 1
 fi
 
-read -p "👤 GitHub username [CarlLee1983]: " REPO_OWNER
-REPO_OWNER=${REPO_OWNER:-CarlLee1983}
+# Default GitHub username to vendor name
+read -p "👤 GitHub username [$VENDOR_NAME]: " REPO_OWNER
+REPO_OWNER=${REPO_OWNER:-$VENDOR_NAME}
 
-read -p "📁 Repository name: " REPO_NAME
-if [ -z "$REPO_NAME" ]; then
-    echo -e "${RED}Error: Repository name is required.${NC}"
-    exit 1
-fi
+# Default repository name to package slug
+read -p "📁 Repository name [$PACKAGE_SLUG]: " REPO_NAME
+REPO_NAME=${REPO_NAME:-$PACKAGE_SLUG}
 
 read -p "✍️  Author name [Carl Lee]: " AUTHOR_NAME
 AUTHOR_NAME=${AUTHOR_NAME:-Carl Lee}
