@@ -152,8 +152,17 @@ replace_in_file() {
     perl -i -pe "s/\{\{REPO_NAME\}\}/$REPO_NAME/g" "$file" 2>/dev/null || true
     perl -i -pe "s/\{\{AUTHOR_NAME\}\}/$AUTHOR_NAME/g" "$file" 2>/dev/null || true
     perl -i -pe "s/\{\{AUTHOR_EMAIL\}\}/$AUTHOR_EMAIL/g" "$file" 2>/dev/null || true
-    perl -i -pe "s/\{\{YEAR\}\}/$YEAR/g" "$file" 2>/dev/null || true
+    perl -i -pe "s/\\{\\{YEAR\\}\\}/$YEAR/g" "$file" 2>/dev/null || true
 }
+
+# Copy GitHub workflows from templates directory
+echo -e "  📂 Copying GitHub workflows..."
+if [ -d "templates/.github" ]; then
+    cp -r templates/.github/. .github/
+    echo -e "  ${GREEN}✓${NC} GitHub workflows copied"
+else
+    echo -e "  ${YELLOW}⚠${NC} templates/.github not found, skipping"
+fi
 
 # Find and process all text files
 echo -e "  📝 Replacing template variables..."
@@ -190,6 +199,8 @@ fi
 # Clean up template files
 echo -e "  🗑️  Cleaning up template files..."
 rm -f init.sh
+rm -rf templates
+rm -f TEMPLATE_README.md TEMPLATE_README_ZH.md
 echo -e "  ${GREEN}✓${NC} Template files cleaned"
 
 # Initialize new Git repository

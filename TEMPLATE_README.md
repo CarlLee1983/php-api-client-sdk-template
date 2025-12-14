@@ -129,14 +129,17 @@ php-api-client-sdk-template/
 │   │   ├── bug_report.yml
 │   │   ├── config.yml
 │   │   └── feature_request.yml
-│   ├── workflows/
-│   │   ├── ci.yml
-│   │   └── release.yml
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── dependabot.yml
+│   └── PULL_REQUEST_TEMPLATE.md
+│
+├── templates/                     # CI files (copied during init)
+│   └── .github/
+│       ├── workflows/
+│       │   ├── ci.yml
+│       │   └── release.yml
+│       └── dependabot.yml
 │
 ├── config/
-│   └── sdk.php                  # Laravel config
+│   └── sdk.php                    # Laravel config
 │
 ├── src/
 │   ├── Contracts/
@@ -171,10 +174,14 @@ php-api-client-sdk-template/
 ├── README.md
 ├── README_ZH.md
 ├── SECURITY.md
+├── TEMPLATE_README.md             # Template usage guide (removed after init)
+├── TEMPLATE_README_ZH.md          # Template usage guide - Chinese
 ├── composer.json
-├── init.sh
+├── init.sh                        # Initialization script
 └── phpunit.xml
 ```
+
+> **Note**: The `templates/` directory contains GitHub CI/CD workflows that will be copied to `.github/` during initialization. This prevents CI failures in the template repository itself.
 
 ## After Initialization
 

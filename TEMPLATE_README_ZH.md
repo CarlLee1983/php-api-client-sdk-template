@@ -129,14 +129,17 @@ php-api-client-sdk-template/
 │   │   ├── bug_report.yml
 │   │   ├── config.yml
 │   │   └── feature_request.yml
-│   ├── workflows/
-│   │   ├── ci.yml
-│   │   └── release.yml
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── dependabot.yml
+│   └── PULL_REQUEST_TEMPLATE.md
+│
+├── templates/                     # CI 檔案（初始化時複製）
+│   └── .github/
+│       ├── workflows/
+│       │   ├── ci.yml
+│       │   └── release.yml
+│       └── dependabot.yml
 │
 ├── config/
-│   └── sdk.php                  # Laravel 配置
+│   └── sdk.php                    # Laravel 配置
 │
 ├── src/
 │   ├── Contracts/
@@ -171,10 +174,14 @@ php-api-client-sdk-template/
 ├── README.md
 ├── README_ZH.md
 ├── SECURITY.md
+├── TEMPLATE_README.md             # 模板使用指南（初始化後移除）
+├── TEMPLATE_README_ZH.md          # 模板使用指南 - 中文
 ├── composer.json
-├── init.sh
+├── init.sh                        # 初始化腳本
 └── phpunit.xml
 ```
+
+> **注意**：`templates/` 目錄包含 GitHub CI/CD 工作流程，會在初始化時複製到 `.github/`。這可以避免模板倉庫本身的 CI 失敗。
 
 ## 初始化後
 
